@@ -2,7 +2,7 @@ package practica;
 
 import java.awt.Color;
 import java.util.Random;
-
+//Prueba
 public class ModeloHisteria {
 	private Color[] coloresDisponibles = { Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.MAGENTA,
 			Color.CYAN };
