@@ -1,10 +1,9 @@
-package practica;
+package main;
 
 import javax.swing.SwingUtilities;
 
-/**
- * Punto de entrada de la aplicación. Inicia la ventana de bienvenida.
- */
+import vista.VentanaBienvenida;
+
 public class HisteriaApp {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

@@ -1,12 +1,8 @@
-package practica;
+package vista;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * VentanaBienvenida muestra la pantalla inicial del juego con el título, la descripción
- * y botones para iniciar el juego o salir.
- */
 public class VentanaBienvenida extends JFrame {
     public VentanaBienvenida() {
         setTitle("Bienvenida");
@@ -16,9 +12,6 @@ public class VentanaBienvenida extends JFrame {
         configurarInterfaz();
     }
 
-    /**
-     * Configura la interfaz de la ventana principal.
-     */
     private void configurarInterfaz() {
         getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         getContentPane().add(Box.createVerticalStrut(15));
@@ -31,9 +24,6 @@ public class VentanaBienvenida extends JFrame {
         add(panelPrincipal);
     }
 
-    /**
-     * Crea el panel central con el título y la descripción del juego.
-     */
     private JPanel crearPanelCentro() {
         JPanel panelCentro = new JPanel();
         panelCentro.setLayout(new BoxLayout(panelCentro, BoxLayout.Y_AXIS));
@@ -52,20 +42,14 @@ public class VentanaBienvenida extends JFrame {
         return panelCentro;
     }
 
-    /**
-     * Crea el HTML de la descripción para que se muestre formateado.
-     */
     private String crearDescripcionHtml() {
-        String texto = "El objetivo del juego es colorear completamente una grilla, pero evitando que dos celdas vecinas tengan el mismo color. "
-                     + "Inicialmente, todas las celdas están sin colorear. En cada turno, el jugador hace click sobre una celda, "
-                     + "y este click tiene el efecto de cambiar el color de esa casilla a uno aleatorio de entre 6 posibles. "
-                     + "La dificultad consiste en que si este nuevo color coincide con el de alguna celda vecina, la celda cambiada y todas sus vecinas se apagarán!";
+        String texto = "El objetivo del juego es colorear completamente una grilla, pero evitando que dos celdas vecinas tengan el mismo color. " +
+                "Inicialmente, todas las celdas están sin colorear. En cada turno, el jugador hace click sobre una celda, " +
+                "y este click tiene el efecto de cambiar el color de esa casilla a uno aleatorio de entre 6 posibles. " +
+                "La dificultad consiste en que si este nuevo color coincide con el de alguna celda vecina, la celda cambiada y todas sus vecinas se apagarán!";
         return "<html><div style='text-align: justify;'>" + texto + "</div></html>";
     }
 
-    /**
-     * Crea el panel con los botones para iniciar o salir del juego.
-     */
     private JPanel crearPanelBotones() {
         JButton btnIntentar = new JButton("¡Quiero intentarlo!");
         btnIntentar.setAlignmentX(Component.CENTER_ALIGNMENT);

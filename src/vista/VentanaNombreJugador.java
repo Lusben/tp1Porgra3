@@ -1,11 +1,8 @@
-package practica;
+package vista;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * VentanaNombreJugador solicita al usuario que ingrese su nombre.
- */
 public class VentanaNombreJugador extends JFrame {
     private String nombreJugador;
 
@@ -17,9 +14,6 @@ public class VentanaNombreJugador extends JFrame {
         inicializarComponentes();
     }
 
-    /**
-     * Inicializa los componentes de la ventana y organiza los paneles.
-     */
     private void inicializarComponentes() {
         JPanel panel = new JPanel(new BorderLayout());
         JLabel lblPregunta = new JLabel("¿Cuál es tu nombre?", JLabel.CENTER);
@@ -33,9 +27,6 @@ public class VentanaNombreJugador extends JFrame {
         add(panel);
     }
 
-    /**
-     * Procesa la acción cuando el usuario hace clic en "Siguiente".
-     */
     private void onContinuar(JTextField txtNombre) {
         nombreJugador = txtNombre.getText().trim();
         if (nombreJugador.isEmpty()) {

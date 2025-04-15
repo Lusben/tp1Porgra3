@@ -1,13 +1,13 @@
-package practica;
+package controlador;
 
 import javax.swing.*;
+
+import modelo.ModeloHisteria;
+import vista.VistaHisteria;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * ControladorHisteria conecta la vista y el modelo.
- * Se encarga de procesar el clic en una celda, actualizar el modelo y refrescar la vista.
- */
 public class ControladorHisteria implements ActionListener {
     private ModeloHisteria modelo;
     private VistaHisteria vista;
@@ -25,13 +25,10 @@ public class ControladorHisteria implements ActionListener {
         JButton boton = (JButton) e.getSource();
         int fila = (int) boton.getClientProperty("fila");
         int columna = (int) boton.getClientProperty("columna");
-
-        // Se procesa el clic sobre la celda para cambiar su color aleatorio y verificar colisiones.
         boolean colision = modelo.celdaPulsada(fila, columna);
         intentos++;
         vista.actualizarIntentos(intentos);
         vista.actualizarTablero(modelo);
-
         if (modelo.isBoardComplete()) {
             vista.mostrarMensajeVictoria();
             System.exit(0);
